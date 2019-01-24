@@ -72,10 +72,8 @@
   </style>
 
   <script>
-    const clock = setInterval(setTime, 1000);
-
     function setTime() {
-      let date = new Date();
+      const date = new Date();
       let h = date.getHours();
       if (h > 12) {
         h -= 12;
@@ -83,13 +81,15 @@
         h = 12;
       }
       h = h * 30 + 90;
-      let m = date.getMinutes() * 6 + 90;
-      let s = date.getSeconds() * 6 + 90;
+      const m = date.getMinutes() * 6 + 90;
+      const s = date.getSeconds() * 6 + 90;
 
       document.querySelector(".hour-hand").style.transform = `rotate(${h}deg)`
       document.querySelector(".min-hand").style.transform = `rotate(${m}deg)`
       document.querySelector(".second-hand").style.transform = `rotate(${s}deg)`
     }
+
+    const clock = setInterval(setTime, 1000);
   </script>
 </body>
 </html>
